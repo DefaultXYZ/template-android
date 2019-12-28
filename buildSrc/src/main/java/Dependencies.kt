@@ -25,7 +25,7 @@ object Versions {
     const val targetSdk = 28
 
     const val appcompat = "1.1.0"
-    const val ktx = "1.1.0"
+    const val coreKtx = "1.1.0"
     const val constraintlayout = "2.0.0-beta4"
     const val recyclerview = "1.0.0"
 
@@ -66,7 +66,7 @@ object Libraries {
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
 
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompat}"
-    const val ktx = "androidx.core:core-ktx:${Versions.ktx}"
+    const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
     const val constraintlayout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
     const val recyclerview = "androidx.recyclerview:recyclerview:${Versions.recyclerview}"
