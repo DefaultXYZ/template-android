@@ -1,5 +1,5 @@
 object ApplicationId {
-    const val id = "io.sentizer.android"
+    const val id = "defaultxyz.template.android"
 }
 
 object Modules {
@@ -12,16 +12,13 @@ object Releases {
     const val versionMinor = 0
     const val buildNum = 1
 
-    val versionCode = versionMajor * 1_000_000 + versionMinor * 1_000 + buildNum
-    val versionName = "$versionMajor.$versionMinor.$buildNum"
+    const val versionCode = versionMajor * 1_000_000 + versionMinor * 1_000 + buildNum
+    const val versionName = "$versionMajor.$versionMinor.$buildNum"
 }
 
 object Versions {
     const val gradle = "3.5.2"
-    const val kotlin = "1.3.60"
-    const val googleServices = "4.3.2"
-    const val fabric = "1.31.0"
-    const val dependencyUpdates = "0.25.0"
+    const val kotlin = "1.3.61"
 
     const val compileSdk = 28
     const val minSdk = 21
@@ -29,13 +26,13 @@ object Versions {
 
     const val appcompat = "1.1.0"
     const val ktx = "1.1.0"
-    const val constraintlayout = "1.1.3"
+    const val constraintlayout = "2.0.0-beta4"
     const val recyclerview = "1.0.0"
 
     const val lifecycle = "2.1.0"
     const val legacySupport = "1.0.0"
 
-    const val room = "2.2.0-beta01"
+    const val room = "2.2.3"
 
     const val firebaseCore = "17.2.0"
     const val firebaseAuth = "19.1.0"
@@ -45,24 +42,15 @@ object Versions {
 
     const val crashlytics = "2.10.1"
 
-    const val retrofit = "2.6.2"
+    const val retrofit = "2.7.0"
 
-    const val rxjava = "2.2.13"
+    const val rxjava = "2.2.16"
     const val rxandroid = "2.1.1"
     const val rxkotlin = "2.4.0"
 
-    const val rxwifi = "0.3.0"
+    const val dexter = "6.0.1"
 
-    const val dexter = "5.0.0"
-
-    const val spinKit = "1.2.0"
-    const val cardStackView = "2.3.3"
-    const val materialRatingBar = "1.3.3"
-    const val countryCodePicker = "2.3.4"
-
-    const val glide = "4.10.0"
-
-    const val dagger = "2.16"
+    const val dagger = "2.25.4"
 
     const val leakCanary = "2.0-beta-3"
 
@@ -107,16 +95,7 @@ object Libraries {
     const val rxkotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.rxkotlin}"
     const val rxandroid = "io.reactivex.rxjava2:rxandroid:${Versions.rxandroid}"
 
-    const val rxwifi = "com.github.pwittchen:reactivewifi-rx2:${Versions.rxwifi}"
     const val dexter = "com.karumi:dexter:${Versions.dexter}"
-    const val spinKit = "com.github.ybq:Android-SpinKit:${Versions.spinKit}"
-    const val cardStackView = "com.yuyakaido.android:card-stack-view:${Versions.cardStackView}"
-    const val materialRatingBar =
-        "me.zhanghai.android.materialratingbar:library:${Versions.materialRatingBar}"
-    const val countryCodePicker = "com.hbb20:ccp:${Versions.countryCodePicker}"
-
-    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
-    const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
 
     const val daggerAndroid = "com.google.dagger:dagger-android:${Versions.dagger}"
     const val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Versions.dagger}"

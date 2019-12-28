@@ -64,20 +64,7 @@ dependencies {
     implementation Libraries.rxjava
     implementation Libraries.rxandroid
 
-    implementation Libraries.rxwifi
-
     implementation Libraries.dexter
-
-    implementation Libraries.spinKit
-
-    implementation Libraries.cardStackView
-
-    implementation Libraries.materialRatingBar
-
-    implementation Libraries.countryCodePicker
-
-    implementation Libraries.glide
-    kapt Libraries.glideCompiler
 
     implementation Libraries.daggerAndroid
     implementation Libraries.daggerAndroidSupport
@@ -96,4 +83,8 @@ dependencies {
 
     androidTestImplementation Libraries.testRunner
     androidTestImplementation Libraries.espresso
+}
+
+repositories {
+    google()
 }
