@@ -1,6 +1,7 @@
 package defaultxyz.template.core.extensions
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
@@ -16,6 +17,8 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import defaultxyz.template.core.logging.error
+import java.io.InputStream
 
 inline fun <reified T : ViewModel> FragmentActivity.lazyViewModel(noinline factory: () -> ViewModelProvider.Factory): Lazy<T> =
     lazy { ViewModelProviders.of(this, factory())[T::class.java] }
@@ -66,5 +69,20 @@ fun TextView.asUnderline(underlined: Boolean = true) {
         paintFlags xor Paint.UNDERLINE_TEXT_FLAG
     } else {
         paintFlags and Paint.UNDERLINE_TEXT_FLAG.inv()
+    }
+}
+
+fun Context.openAssetsFile(fileName: String): ByteArray? {
+    var inputStream: InputStream? = null
+    return try {
+        inputStream = assets.open(fileName)
+        ByteArray(inputStream.available()).apply {
+            inputStream.read(this)
+        }
+    } catch (e: Exception) {
+        error(e)
+        null
+    } finally {
+        inputStream?.close()
     }
 }
