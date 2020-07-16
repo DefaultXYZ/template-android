@@ -3,6 +3,7 @@ package defaultxyz.template.core.base
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import defaultxyz.template.core.logging.error
 import io.reactivex.*
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
@@ -18,7 +19,7 @@ abstract class BaseViewModel : ViewModel() {
     Composite Disposable support
      */
 
-    private val compositeDisposable = CompositeDisposable()
+    protected val compositeDisposable = CompositeDisposable()
 
     override fun onCleared() {
         compositeDisposable.clear()
@@ -38,56 +39,56 @@ abstract class BaseViewModel : ViewModel() {
     RxJava support
      */
 
-    protected fun <T : Any> Observable<T>.subscribeBy(
+    protected fun <T : Any> Observable<T>.subscribed(
         onError: (Throwable) -> Unit = {},
         onNext: (T) -> Unit
     ) {
         subscribe(onNext, {
-            it.printStackTrace()
+            error(it)
             error.postValue(it)
             onError(it)
         }).addToDisposables()
     }
 
-    protected fun <T : Any> Flowable<T>.subscribeBy(
+    protected fun <T : Any> Flowable<T>.subscribed(
         onError: (Throwable) -> Unit = {},
         onNext: (T) -> Unit
     ) {
         subscribe(onNext, {
-            it.printStackTrace()
+            error(it)
             error.postValue(it)
             onError(it)
         }).addToDisposables()
     }
 
-    protected fun <T : Any> Single<T>.subscribeBy(
+    protected fun <T : Any> Single<T>.subscribed(
         onError: (Throwable) -> Unit = {},
         onSuccess: (T) -> Unit
     ) {
         subscribe(onSuccess, {
-            it.printStackTrace()
+            error(it)
             error.postValue(it)
             onError(it)
         }).addToDisposables()
     }
 
-    protected fun <T : Any> Maybe<T>.subscribeBy(
+    protected fun <T : Any> Maybe<T>.subscribed(
         onError: (Throwable) -> Unit = {},
         onSuccess: (T) -> Unit
     ) {
         subscribe(onSuccess, {
-            it.printStackTrace()
+            error(it)
             error.postValue(it)
             onError(it)
         }).addToDisposables()
     }
 
-    protected fun Completable.subscribeBy(
+    protected fun Completable.subscribed(
         onError: (Throwable) -> Unit = {},
         onComplete: () -> Unit
     ) {
         subscribe(onComplete, {
-            it.printStackTrace()
+            error(it)
             error.postValue(it)
             onError(it)
         }).addToDisposables()

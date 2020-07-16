@@ -1,6 +1,7 @@
 package defaultxyz.template.core.base
 
 import io.reactivex.Completable
+import io.reactivex.Observable
 import io.reactivex.Single
 
 interface BaseDao<T : Any> {
@@ -9,4 +10,6 @@ interface BaseDao<T : Any> {
     fun getAll(): Single<List<T>>
 
     fun deleteAll(): Completable
+
+    fun observeAll(): Observable<List<T>>
 }
